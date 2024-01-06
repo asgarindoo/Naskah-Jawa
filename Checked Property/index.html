@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Payment Options</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: left;
+        margin: 50px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      #selectedOptions {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Choose Your Payment Options</h1>
+
+    <label> <input type="checkbox" id="creditCard" /> Credit Card </label>
+
+    <label> <input type="checkbox" id="paypal" /> PayPal </label>
+
+    <label> <input type="checkbox" id="bankTransfer" /> Bank Transfer </label>
+
+    <div id="selectedOptions">Selected Options: None</div>
+
+    <script>
+      // Accessing the checkbox elements
+      let creditCardCheckbox = document.getElementById("creditCard");
+      let paypalCheckbox = document.getElementById("paypal");
+      let bankTransferCheckbox = document.getElementById("bankTransfer");
+
+      // Adding event listeners to the checkboxes
+      creditCardCheckbox.addEventListener("change", updateSelectedOptions);
+      paypalCheckbox.addEventListener("change", updateSelectedOptions);
+      bankTransferCheckbox.addEventListener("change", updateSelectedOptions);
+
+      // Function to update selected options
+      function updateSelectedOptions() {
+        let selectedOptionsElement = document.getElementById("selectedOptions");
+        let selectedOptions = [];
+
+        // Checking the state of each checkbox
+        if (creditCardCheckbox.checked) {
+          selectedOptions.push("Credit Card");
+        }
+
+        if (paypalCheckbox.checked) {
+          selectedOptions.push("PayPal");
+        }
+
+        if (bankTransferCheckbox.checked) {
+          selectedOptions.push("Bank Transfer");
+        }
+
+        // Displaying the selected options
+        if (selectedOptions.length > 0) {
+          selectedOptionsElement.textContent =
+            "Selected Options: " + selectedOptions.join(", ");
+        } else {
+          selectedOptionsElement.textContent = "Selected Options: None";
+        }
+      }
+
+      // Initial update of selected options
+      updateSelectedOptions();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Checker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+      }
+
+      #numberInput {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      #resultMessage {
+        font-size: 18px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Number Checker</h1>
+
+    <label for="numberInput">Enter a Number:</label>
+    <input type="number" id="numberInput" placeholder="Enter number" />
+
+    <button onclick="checkNumber()">Check Number</button>
+
+    <div id="resultMessage"></div>
+
+    <script>
+      // Function to check the number
+      function checkNumber() {
+        // Accessing the input element
+        let numberInput = document.getElementById("numberInput");
+
+        // Using ternary operator to determine the result message
+        let resultMessage =
+          numberInput.value > 0
+            ? "The number is positive."
+            : numberInput.value < 0
+            ? "The number is negative."
+            : "The number is zero.";
+
+        // Displaying the result message
+        document.getElementById("resultMessage").textContent = resultMessage;
+      }
+    </script>
+  </body>
+</html>

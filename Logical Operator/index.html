@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Status</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: left;
+        margin: 50px;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      select {
+        padding: 8px;
+        margin: 5px 0;
+        width: 200px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      button {
+        margin-left: 10px;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      #result {
+        font-size: 18px;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #dff0d8;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        color: #3c763d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login Status</h1>
+
+    <label for="loginStatus">Select login status:</label>
+    <select id="loginStatus">
+      <option value="true">Logged In</option>
+      <option value="false">Not Logged In</option>
+    </select>
+
+    <label for="role">Choose your role:</label>
+    <select id="role">
+      <option value="admin">Admin</option>
+      <option value="user">User</option>
+    </select>
+
+    <label for="subscription">Choose your subscription level:</label>
+    <select id="subscription">
+      <option value="free">Free</option>
+      <option value="premium">Premium</option>
+    </select>
+
+    <button onclick="checkLoginStatus()">Check Status</button>
+
+    <div id="result"></div>
+
+    <script src="operator.js"></script>
+  </body>
+</html>
